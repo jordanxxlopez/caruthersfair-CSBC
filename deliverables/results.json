@@ -130,13 +130,13 @@
       "low": 0.3,
       "mode": 0.5,
       "high": 0.8,
-      "basis": "Share of football-field parking used by the fair on Saturday (assumed)"
+      "basis": "Share of the open grass lot used by the fair on Saturday (assumed)"
     },
     "field_spaces": {
       "low": 250,
       "mode": 350,
       "high": 450,
-      "basis": "Football-field parking spaces (unverified, to measure)"
+      "basis": "Open grass lot across from the high school, used for fair parking, next to the fire station (unverified, to measure)"
     },
     "elem_spaces": {
       "low": 80,
@@ -223,5 +223,23 @@
       "high": 1200
     }
   },
-  "contingency": 0.15
+  "contingency": 0.15,
+  "staging": {
+    "need": {
+      "10": 9.241558296220736,
+      "50": 11.678505009091392,
+      "90": 14.566830973968061
+    },
+    "capacity": {
+      "10": 15.828201240925763,
+      "50": 20.551732609210337,
+      "90": 25.758533965871454
+    },
+    "short": {
+      "10": 0.0,
+      "50": 0.0,
+      "90": 0.0
+    },
+    "prob_short": 0.01415
+  }
 }

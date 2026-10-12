@@ -24,8 +24,8 @@ INPUTS = {
     "stand_capacity": (800, 1500, 2500, "Bleacher capacity at the high school (unverified)"),
     "occupancy": (2.2, 2.8, 3.2, "People per car (assumed)"),
     "car_share": (0.70, 0.85, 0.95, "Share of spectators arriving by car (assumed)"),
-    "fair_lot_share": (0.30, 0.50, 0.80, "Share of football-field parking used by the fair on Saturday (assumed)"),
-    "field_spaces": (250, 350, 450, "Football-field parking spaces (unverified, to measure)"),
+    "fair_lot_share": (0.30, 0.50, 0.80, "Share of the open grass lot used by the fair on Saturday (assumed)"),
+    "field_spaces": (250, 350, 450, "Open grass lot across from the high school, used for fair parking, next to the fire station (unverified, to measure)"),
     "elem_spaces": (80, 120, 160, "Elementary lot spaces (unverified, to measure)"),
     "hs_spaces": (80, 120, 160, "High school lot spaces (unverified, to measure)"),
     "trailer_share": (0.20, 0.40, 0.60, "Share of bands bringing a trailer or bus to the lot"),
@@ -179,6 +179,20 @@ if __name__ == "__main__":
         "budget_lines": {k: {"low": v[0], "high": v[1]} for k, v in BUDGET.items()},
         "contingency": CONTINGENCY,
     }
+    # Trailer and bus staging feasibility at the candidate grass lot off Clemenceau
+    n = N
+    bands = o["d"]["bands"]
+    bus_share = RNG.triangular(0.30, 0.50, 0.80, n)
+    trailers = bands * o["d"]["trailer_share"]
+    buses = bands * bus_share
+    need = trailers + buses
+    capacity = RNG.triangular(12, 20, 30, n)  # vehicle spaces, to be measured on the ground
+    short = np.maximum(need - capacity, 0)
+    summary_staging = {
+        "need": pct(need), "capacity": pct(capacity), "short": pct(short),
+        "prob_short": float(np.mean(short > 0)),
+    }
+    summary["staging"] = summary_staging
     with open(os.path.join(HERE, "results.json"), "w") as f:
         json.dump(summary, f, indent=2)
     # sample for the workbook (first 2,000 runs, to keep the file small)

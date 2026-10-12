@@ -136,7 +136,8 @@ H1("Executive summary")
 P("The Caruthers District Fair runs a free-gate, four-day fair each fall, usually Wednesday through Saturday in late September or early October. Its Saturday already carries the fair's parade, its largest crowd, and its evening programming. This report proposes a first annual Caruthers Fair Band Showcase on that Saturday: a no-score exhibition in which 10 to 16 high school field-show bands from the Central Valley and Southern California each receive a morning clinic, an afternoon preview performance with written judge comments, and a field-show slot. Middle school bands may take part in the parade and a short afternoon clinic, and they are not counted toward the field-show total.")
 P("The proposal is positioned as a direct competitor to the Washington Union Preview of Champions, an early-season preview in the same pre-season window. The aim is to draw the bands that would otherwise attend that preview to the fair's Saturday, by offering what the preview may not: a free-gate crowd of the fair's size, a clinic, written judge feedback with no placement, an optional parade, and a live audience during the fair. The Western Band Association (WBA) historically opens its season on the first weekend of October and ends with championships before Thanksgiving, so the window is real and contested. The WBA's own policy manual places exhibition-class ensembles outside caption awards and gives them a participation award at every event, which supports the no-placement offer.")
 P("The central finding is financial, and it changes the proposal. Under the planning assumptions in this report, the showcase costs about " + money(cost["50"]) + " at the median and generates about " + money(rev["50"]) + " in donations, sponsorship and band fees. The median net result is about " + money(net["50"]) + ". No simulated run broke even. The showcase therefore needs roughly $7,000 to $9,000 of fair-board, sponsor or school support, or a reduction in cost, before it can run without a deficit. The fair board is the logical first partner, because it already owns the parade, the grounds and the crowd.")
-P("Parking is the second finding. Vehicles needing a space exceed usable spaces in about " + f"{R['shortfall_prob']*100:.0f}" + "% of simulated runs, with a median shortfall of roughly " + f"{R['shortfall_p50']:.0f}" + " vehicles. Because the football field is used for fair parking, the showcase needs a plan that does not rely on it. This report recommends staging band trailers in a separate lot, with a gate off Clemenceau Avenue, and shuttling visitors from the elementary lot. It also recommends that bands carry instruments only as far as needed, with the host supplying mallets and other shared equipment.")
+P("Parking is the second finding. Vehicles needing a space exceed usable spaces in about " + f"{R['shortfall_prob']*100:.0f}" + "% of simulated runs, with a median shortfall of roughly " + f"{R['shortfall_p50']:.0f}" + " vehicles. Because the open grass lot is used for fair parking, the showcase needs a plan that does not rely on it. This report recommends staging band trailers in a separate lot, with a gate off Clemenceau Avenue, and shuttling visitors from the elementary lot. It also recommends that bands carry instruments only as far as needed, with the host supplying mallets and other shared equipment.")
+P("Feasibility, stated plainly: the showcase is possible but hard. Trailer staging is likely to fit on a candidate grass lot off Clemenceau Avenue if that lot holds about 15 or more vehicle spaces. Visitor parking is the weak point. Even with the elementary lot and a share of the grass lot, the model leaves a visitor shortfall in most runs, so the plan needs either a shuttle from a remote lot or a capped crowd. The fire station, the Clemenceau gate and the walking route each need a written yes before the event can be promised.")
 P("Three further items need decisions before any invitation is sent:")
 BL([("Fire station coordination.", "A courtesy request to reduce non-emergency siren use during the field show, with an explicit statement that emergency response takes precedence. The station listed for Caruthers in public records is at 2701 W. Tahoe Ave., not on Clemenceau Avenue, so the station the working group means must be confirmed (VERIFY)."),
     ("Parade and route.", "The parade is 10 a.m. on the fair's route. The fair's official site says Main Street, while the working group describes W. Tahoe Ave. from S. March Ave. to S. Raider Ave. The route must be confirmed by the fair board before any band packet is released."),
@@ -313,8 +314,9 @@ T(["Site", "Use", "What is known", "What must be confirmed (VERIFY)"], [
     ["Caruthers Elementary and the open field beside it", "Warm-up, load-in, clinic blocks.", "Elementary school on the route between the fair and the high school. An open community field sits close by (location and ownership to be confirmed).", "Use hours on the Saturday; ownership; restrooms; power; parking capacity; insurance."],
     ["Caruthers High School field", "Preview and field-show slots.", "High school site adjacent to the fairgrounds area; located near the parade finish on S. Raider Ave.", "Lights; bleachers; press box and judge positions; field condition; restrooms; power; use fee; availability."],
     ["Fairgrounds, 13599 S. Raider Ave.", "Parade finish; family gathering; fair programming.", "Official address and contact; gate hours; carnival and entertainment on the grounds.", "Board approval; Saturday use; staging; shared restrooms; parking."],
-    ["Football field across from the fairgrounds", "Used for fair parking on the Saturday (per the working group).", "Used for parking during the fair (per the working group).", "Availability for showcase parking; number of spaces; cost; agreement with the fair."]],
+    ["Open grass lot across from the high school, next to the fire station", "Used for fair parking on the Saturday (per the working group).", "Used for parking during the fair (per the working group). It is open grass, not a paved lot.", "Availability for showcase parking; number of spaces; cost; agreement with the fair; fire lane access."]],
     widths=[1.5, 1.4, 2.0, 1.6], size=8.5)
+FIG("figures/map_overview.png", "Figure 5. The sites on the aerial: high school, elementary school, the fairgrounds, and the open grass lot across from the high school. Locations are approximate.", width=6.5)
 H2("7.2 Field and stadium requirements")
 P("The following requirements are a planning checklist. They are drawn from the WBA's credential, event-procedure and weather provisions and from the working group's operating needs. The CSBC's current stadium specifications could not be retrieved, so the checklist must be checked against that document once it is obtained (VERIFY).")
 T(["Requirement", "Basis", "Status"], [
@@ -336,28 +338,36 @@ PB()
 # ---------- 8 ----------
 H1("8. Transportation, trailers and parking")
 H2("8.1 The problem")
-P("The football field across from the fairgrounds is used for fair parking on the Saturday. That is the natural lot for spectators and it is also the closest to the high school. The working group recommends that the showcase not depend on it. Bands bring trailers, buses and cars. Visitors bring cars. The field-show audience is largely local, so it is likely to arrive by car, and it may be large.")
+P("The open grass lot across from the high school, next to the fire station, is used for fair parking on the Saturday. That is the natural lot for spectators and it is also the closest to the high school. The working group recommends that the showcase not depend on it. Bands bring trailers, buses and cars. Visitors bring cars. The field-show audience is largely local, so it is likely to arrive by car, and it may be large.")
 H2("8.2 Predicted demand and supply")
 P("The Monte Carlo model estimates the number of vehicles that need a space at the high school and its lots, and compares it with usable spaces. The main results are below. Section 12 describes the model.")
 T(["Measure", "P10", "Median (P50)", "P90"], [
     ["Vehicles needing space (spectator cars plus band vehicles)", num(ld["10"]), num(ld["50"]), num(ld["90"])],
-    ["Usable parking spaces (football field net of the fair's share, plus two school lots)", num(sup["10"]), num(sup["50"]), num(sup["90"])],
+    ["Usable parking spaces (open grass lot net of the fair's share, plus two school lots)", num(sup["10"]), num(sup["50"]), num(sup["90"])],
     ["Spectator cars", num(cars["10"]), num(cars["50"]), num(cars["90"])]],
     widths=[3.7, 0.9, 1.0, 0.9], size=9)
-P(f"Vehicles needing space exceed usable spaces in about {R['shortfall_prob']*100:.0f}% of simulated runs. The median shortfall is about {R['shortfall_p50']:.0f} vehicles, and the 90th-percentile shortfall is about {R['shortfall_p90']:.0f}. These figures are sensitive to the assumed fair share of the football field and to the unverified lot sizes, so they are a basis for planning, not a forecast.")
+P(f"Vehicles needing space exceed usable spaces in about {R['shortfall_prob']*100:.0f}% of simulated runs. The median shortfall is about {R['shortfall_p50']:.0f} vehicles, and the 90th-percentile shortfall is about {R['shortfall_p90']:.0f}. These figures are sensitive to the assumed fair share of the open grass lot and to the unverified lot sizes, so they are a basis for planning, not a forecast.")
 FIG("figures/fig_parking.png", "Figure 1. Simulated vehicles needing space against usable spaces (20,000 runs).")
+H2("8.2a Trailer and bus staging feasibility")
+st = R["staging"]
+P(f"The staging model asks whether the candidate grass lot off Clemenceau Avenue can hold the band trailers and buses. The median demand is about {st['need']['50']:.0f} vehicle spaces (trailers plus buses), with a 90th-percentile demand of about {st['need']['90']:.0f}. The capacity of the candidate lot is not yet measured, so the model assumes between 12 and 30 spaces, with a median of about {st['capacity']['50']:.0f}. Under those assumptions the staging area fits in about {(1-st['prob_short'])*100:.0f}% of runs. The conclusion is conditional: if the lot is smaller than about 15 spaces, the plan fails and trailers must go to the elementary lot or the fairgrounds overflow.")
+T(["Trailer and bus staging", "P10", "Median (P50)", "P90"], [
+    ["Trailers and buses needing staging", f"{st['need']['10']:.0f}", f"{st['need']['50']:.0f}", f"{st['need']['90']:.0f}"],
+    ["Assumed candidate-lot capacity (to measure)", f"{st['capacity']['10']:.0f}", f"{st['capacity']['50']:.0f}", f"{st['capacity']['90']:.0f}"]],
+    widths=[3.7, 0.9, 1.0, 0.9], size=9)
 H2("8.3 Options")
 P("The working group compared five ways to handle the demand. Each option is evaluated on its feasibility, cost, risk and the alternative it leaves.")
 T(["Option", "Description", "Advantages", "Disadvantages and risks", "Assessment"], [
-    ["A. Share the football field", "Keep the fair's parking; showcase visitors use the field as well.", "No new arrangement.", "Not enough spaces in most runs; fair demand is high.", "Not recommended as the only plan."],
-    ["B. Elementary lot and shuttle", "Visitors park at the elementary lot and walk or are shuttled to the high school.", "Keeps the football field for the fair; uses a school lot.", "Requires a shuttle and a walking route; school lot may be needed for staff.", "Recommended for visitors."],
+    ["A. Share the open grass lot", "Keep the fair's parking; showcase visitors use the grass lot as well.", "No new arrangement.", "Not enough spaces in most runs; fair demand is high.", "Not recommended as the only plan."],
+    ["B. Elementary lot and shuttle", "Visitors park at the elementary lot and walk or are shuttled to the high school.", "Keeps the grass lot for the fair; uses a school lot.", "Requires a shuttle and a walking route; school lot may be needed for staff.", "Recommended for visitors."],
     ["C. Trailer staging off Clemenceau Avenue", "A dedicated gate between the fire station area and Clemenceau Avenue, for band trailers and buses only.", "Keeps trailers off the fair's parking and away from the high school's frontage; gives a single staging point.", "Needs district and fair approval; needs a gate, signage, fencing and a traffic plan; fire lanes must stay clear.", "Recommended (subject to VERIFY of the location and the fire station, Section 10)."],
     ["D. Fairgrounds overflow", "Use the fairgrounds' own overflow parking with the fair's permission.", "Central location.", "Fair demand; cost to be agreed.", "Backup option."],
     ["E. Bands carry instruments only as far as needed", "Trailers stay at staging; the clinic uses the elementary room; mallets and shared equipment are supplied by the host.", "Less carrying; trailers stay put.", "Drums and heavy equipment still need to move; requires a secure storage room at the elementary school.", "Recommended, as a supporting measure."]],
     widths=[1.2, 1.6, 1.4, 1.6, 1.0], size=8)
 H2("8.4 Recommendation")
-P("Combine B, C and E. Visitors park at the elementary lot and walk or are shuttled to the high school. Band trailers and buses stage at a gate off Clemenceau Avenue, with an operated gate to keep traffic controlled. Bands carry instruments only from their trailers to the clinic or the field, and the host provides mallets and shared equipment. Option D is the backup. The football field remains the fair's parking.")
+P("Combine B, C and E. Visitors park at the elementary lot and walk or are shuttled to the high school. Band trailers and buses stage at a gate off Clemenceau Avenue, with an operated gate to keep traffic controlled. Bands carry instruments only from their trailers to the clinic or the field, and the host provides mallets and shared equipment. Option D is the backup. The open grass lot remains the fair's parking.")
 P("Before the plan is adopted, the working group must confirm the Clemenceau gate's location, ownership, width and turning radius for trailers, and must show that the fire lane stays clear (VERIFY). The gate off Clemenceau is best located between the fire station area and the street, but its exact position must be confirmed with the fire district, because the fire station that serves Caruthers is listed at 2701 W. Tahoe Ave. (Section 10).")
+FIG("figures/map_parking.png", "Figure 7. Parking and trailer plan: visitors use the elementary lot, trailers stage on a candidate grass lot off Clemenceau Avenue through a gate. Locations are approximate.", width=6.5)
 H2("8.5 Shuttle and walking")
 P("A shuttle from the elementary lot to the fairgrounds and high school is the simplest way to handle visitors if the lot is used. The shuttle should run continuously from 2:00 p.m. to 9:00 p.m., with a stop at the high school field. If the shuttle is not available, the walking distance from the elementary lot to the high school should be measured and signed (VERIFY). Mobility-impaired visitors need a dedicated drop-off close to the field.")
 PB()
@@ -367,6 +377,8 @@ H1("9. Road closures, walking route and traffic control")
 H2("9.1 Routes")
 P("The working group identified three routes. The first is the parade route, which runs 10 a.m. on W. Tahoe Ave. from S. March Ave. to S. Raider Ave. (Section 2.3, VERIFY). The second is the walking route for field-show bands from the elementary field to the high school, which the working group proposes runs along W. Sandy Ave. and S. Raider Ave. (VERIFY). The third is the route for trailers and buses from Clemenceau Avenue to the staging gate.")
 P("The earlier red line drawn on the aerial map that the working group reviewed was not the parade route. It marked the school and fair locations and was used only to orient the locations. Street names and exact segments for the walking route must be confirmed by a field walk.")
+FIG("figures/map_walk.png", "Figure 6. Walking route for field-show bands, from the community field and elementary school to the high school. The route and its length are approximate and must be walked.", width=6.5)
+FIG("figures/map_parade.png", "Figure 8. Parade segment, 10 a.m., shown approximately. The fair board must confirm the route.", width=6.5)
 H2("9.2 Proposed closures and controls")
 T(["Location", "Proposed control", "When", "Notes"], [
     ["S. Raider Ave. between W. Sandy Ave. and W. Tahoe Ave.", "Closure to through traffic; local access by flagger.", "Walking window and the field-show block (about 4:00 to 9:00 p.m.).", "Full closure requires a county permit (VERIFY)."],
@@ -380,7 +392,7 @@ P("A street closure needs a permit from the agency that controls the road. The p
 H2("9.4 Traffic control staffing")
 P("The working group estimates four to six flaggers for about six hours on the day (Section 13). This covers the walking route crossings, the Raider Ave. control, and the Clemenceau gate. Flaggers must be trained and equipped. A traffic control plan should be prepared by a qualified provider and approved before the day.")
 H2("9.5 Noise")
-P("The football field across from the fairgrounds is used for parking and will generate vehicle noise during the field show. The working group recommends a sheriff's or traffic officer's presence during the field-show block, and recommends that horns and idling be addressed by signage and the flaggers. This is a request to the Sheriff's office and the fair, not a guarantee.")
+P("The open grass lot across from the high school, next to the fire station, is used for fair parking and will generate vehicle noise during the field show. The working group recommends a sheriff's or traffic officer's presence during the field-show block, and recommends that horns and idling be addressed by signage and the flaggers. This is a request to the Sheriff's office and the fair, not a guarantee.")
 PB()
 
 # ---------- 10 ----------
@@ -427,7 +439,7 @@ P("The model simulates 20,000 runs. Each run draws a value for each input from a
 BL(["Field-show spectators: band guests (bands times guests per band) plus walk-up spectators (a share of Saturday fair attendance), capped at seated capacity.",
     "Cars: spectators times the car share, divided by people per car.",
     "Vehicles needing space: cars plus band vehicles.",
-    "Usable spaces: the football field's spaces less the fair's share on the Saturday, plus the elementary and high school lots.",
+    "Usable spaces: the open grass lot's spaces less the fair's share on the Saturday, plus the elementary and high school lots.",
     "Cost: the sum of the budget lines (each drawn from its range), plus contingency at 15%.",
     "Revenue: donations and programme sales per spectator, plus a sponsor or fair-board contribution, plus band fees.",
     "Net result: revenue minus cost."])
@@ -645,7 +657,7 @@ T(["#", "Item to verify", "Why it matters", "Who verifies"], [
     ["B2", "Parade route and street names (Main Street or W. Tahoe Ave. from S. March Ave.)", "The parade and the walking route depend on it.", "Fair board; traffic lead"],
     ["B3", "High school field availability, lights, bleachers, restrooms, power", "The field show cannot happen without them.", "District facilities"],
     ["B4", "Seated capacity of the high school bleachers", "Caps the spectator count in the model.", "District facilities"],
-    ["B5", "Parking spaces in the football field, elementary lot and high school lot", "Drives the parking model.", "Transportation lead (field count)"],
+    ["B5", "Parking spaces in the open grass lot, elementary lot and high school lot", "Drives the parking model.", "Transportation lead (field count)"],
     ["B6", "Fire station near Clemenceau Avenue, or the W. Tahoe Ave. station (2701 W. Tahoe)", "Determines the fire coordination point and the gate's location.", "Fire district"],
     ["B7", "Fire district's position on courtesy quiet-siren arrangements", "Affects the noise plan.", "Fire district"],
     ["B8", "Fresno County permit requirements for each road on the route", "Required before any closure.", "Fresno County Public Works and Planning"],
@@ -687,7 +699,7 @@ P("Run model.py to regenerate the results, then build_xlsx.py and build_docx.py.
 H2("D.3 Modelling choices")
 BL(["Triangular distributions are used because the planning team could state a range and a most-likely value, but had no data to fit a distribution.",
     "Seated spectators are capped at stand capacity. Demand above capacity is not counted, which understates the audience if spectators stand.",
-    "The fair's share of the football field is modelled as a random share of its spaces on the Saturday, to reflect uncertainty in fair demand.",
+    "The fair's share of the open grass lot is modelled as a random share of its spaces on the Saturday, to reflect uncertainty in fair demand.",
     "Cost lines are drawn independently. In reality, some costs (such as flaggers and restrooms) may move together; correlation is not modelled.",
     "Revenue from concessions, carnival and fair programming is excluded, because it belongs to the fair."])
 H2("D.4 Limits")
