@@ -1,0 +1,227 @@
+{
+  "runs": 20000,
+  "spectators": {
+    "10": 1147.9572290029103,
+    "50": 1578.4462444919327,
+    "90": 2086.3242719469768
+  },
+  "band_guests_mean": 2031.1411435053055,
+  "cars": {
+    "10": 341.50514159070855,
+    "50": 481.1112648550301,
+    "90": 649.7570918129791
+  },
+  "lot_demand": {
+    "10": 366.26208640745085,
+    "50": 506.4263733489079,
+    "90": 675.1061865020971
+  },
+  "supply": {
+    "10": 342.6371533287352,
+    "50": 403.1756820382815,
+    "90": 464.57176934063443
+  },
+  "shortfall_prob": 0.80365,
+  "shortfall_p50": 105.14199853671454,
+  "shortfall_p90": 282.96669473989067,
+  "cost": {
+    "10": 10681.017074021715,
+    "50": 11617.75620132648,
+    "90": 12544.611355378614
+  },
+  "revenue": {
+    "10": 2566.9734807816662,
+    "50": 4090.5002643133635,
+    "90": 5856.972360054917
+  },
+  "net": {
+    "10": -9288.823269426864,
+    "50": -7505.621830622368,
+    "90": -5551.694076877493
+  },
+  "prob_net_nonneg": 0.0,
+  "tornado_base": -8540.0,
+  "tornado": [
+    {
+      "input": "sponsor",
+      "low_change": -1500.0,
+      "high_change": 3500.0
+    },
+    {
+      "input": "band_fee",
+      "low_change": -1200.0,
+      "high_change": 1800.0
+    },
+    {
+      "input": "donation_per_spec",
+      "low_change": -225.0,
+      "high_change": 525.0
+    },
+    {
+      "input": "bands",
+      "low_change": -200.0,
+      "high_change": 400.0
+    },
+    {
+      "input": "stand_capacity",
+      "low_change": -175.0,
+      "high_change": 250.0
+    },
+    {
+      "input": "guests_per_band",
+      "low_change": 0.0,
+      "high_change": 0.0
+    },
+    {
+      "input": "walkup_share",
+      "low_change": 0.0,
+      "high_change": 0.0
+    },
+    {
+      "input": "sat_fair_attendance",
+      "low_change": 0.0,
+      "high_change": 0.0
+    }
+  ],
+  "inputs": {
+    "bands": {
+      "low": 10,
+      "mode": 12,
+      "high": 16,
+      "basis": "Planning target for field-show bands (10 to 16)"
+    },
+    "guests_per_band": {
+      "low": 80,
+      "mode": 150,
+      "high": 250,
+      "basis": "Assumed family and guest count per band"
+    },
+    "sat_fair_attendance": {
+      "low": 15000,
+      "mode": 22000,
+      "high": 30000,
+      "basis": "Saturday share of 60k to 80k four-day estimate (2021 organizer estimate)"
+    },
+    "walkup_share": {
+      "low": 0.02,
+      "mode": 0.05,
+      "high": 0.1,
+      "basis": "Share of Saturday fairgoers who watch the field show"
+    },
+    "stand_capacity": {
+      "low": 800,
+      "mode": 1500,
+      "high": 2500,
+      "basis": "Bleacher capacity at the high school (unverified)"
+    },
+    "occupancy": {
+      "low": 2.2,
+      "mode": 2.8,
+      "high": 3.2,
+      "basis": "People per car (assumed)"
+    },
+    "car_share": {
+      "low": 0.7,
+      "mode": 0.85,
+      "high": 0.95,
+      "basis": "Share of spectators arriving by car (assumed)"
+    },
+    "fair_lot_share": {
+      "low": 0.3,
+      "mode": 0.5,
+      "high": 0.8,
+      "basis": "Share of football-field parking used by the fair on Saturday (assumed)"
+    },
+    "field_spaces": {
+      "low": 250,
+      "mode": 350,
+      "high": 450,
+      "basis": "Football-field parking spaces (unverified, to measure)"
+    },
+    "elem_spaces": {
+      "low": 80,
+      "mode": 120,
+      "high": 160,
+      "basis": "Elementary lot spaces (unverified, to measure)"
+    },
+    "hs_spaces": {
+      "low": 80,
+      "mode": 120,
+      "high": 160,
+      "basis": "High school lot spaces (unverified, to measure)"
+    },
+    "trailer_share": {
+      "low": 0.2,
+      "mode": 0.4,
+      "high": 0.6,
+      "basis": "Share of bands bringing a trailer or bus to the lot"
+    },
+    "band_vehicles": {
+      "low": 1,
+      "mode": 2,
+      "high": 3,
+      "basis": "Vehicles per band that need a space"
+    },
+    "donation_per_spec": {
+      "low": 0.1,
+      "mode": 0.25,
+      "high": 0.6,
+      "basis": "Donations and program sales per spectator (assumed)"
+    },
+    "sponsor": {
+      "low": 0,
+      "mode": 1500,
+      "high": 5000,
+      "basis": "Sponsor or fair-board contribution (unknown)"
+    },
+    "band_fee": {
+      "low": 0,
+      "mode": 100,
+      "high": 250,
+      "basis": "Participation fee per field-show band (policy choice)"
+    }
+  },
+  "budget_lines": {
+    "Field and facility use": {
+      "low": 500,
+      "high": 1500
+    },
+    "Liability insurance": {
+      "low": 500,
+      "high": 1500
+    },
+    "Traffic and crossing control": {
+      "low": 1000,
+      "high": 2500
+    },
+    "Portable restrooms": {
+      "low": 600,
+      "high": 1200
+    },
+    "Sound and staging": {
+      "low": 600,
+      "high": 1500
+    },
+    "Judges (3 to 4)": {
+      "low": 600,
+      "high": 1600
+    },
+    "Clinicians (2)": {
+      "low": 800,
+      "high": 1600
+    },
+    "Plaques, programs, signage": {
+      "low": 500,
+      "high": 1200
+    },
+    "Fire and EMS standby (added)": {
+      "low": 0,
+      "high": 1000
+    },
+    "Trailer staging, fencing and signage (added)": {
+      "low": 300,
+      "high": 1200
+    }
+  },
+  "contingency": 0.15
+}
